@@ -10,12 +10,12 @@ Neural networks consist of simple input/output units called neurons. These units
 
 Regression helps in establishing a relationship between a dependent variable and one or more independent variables. Regression models work well only when the regression equation is a good fit for the data. Although neural networks are complex and computationally expensive, they are flexible and can dynamically pick the best type of regression, and if that is not enough, hidden layers can be added to improve prediction.
 
-Build your training and test set from the dataset, here we are making the neural network 3 hidden layer with activation layer as relu and with their nodes in them. Now we will fit our dataset and then predict the value.
+Build your training and test set from the dataset, here we are making the neural network 2 hidden layer with relu activation function,one input layer and one output layer . Now we will fit our dataset and then predict the value.
 
 
 ## Neural Network Model :
 
-![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/a5f22604-ace9-4883-8cb2-2f31e459325f)
+![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/55452805-e3e1-49ce-8353-4596daafd396)
 
 ## DESIGN STEPS :
 
@@ -41,12 +41,12 @@ Plot the performance plot
 Evaluate the model with the testing data.
 
 ## PROGRAM :
-```
+
 Developed By : P SYAM TEJ
 Reference Number : 212221240056
-```
+
 ### Importing Required Packages :
-```
+
 from google.colab import auth
 import gspread
 from google.auth import default
@@ -55,9 +55,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
-```
+
 ### Authentication and Creating DataFrame From DataSheet :
-```
+
 auth.authenticate_user()
 creds, _ = default()
 gc = gspread.authorize(creds)
@@ -67,21 +67,21 @@ df = pd.DataFrame(rows[1:], columns=rows[0])
 df = df.astype({'INPUT':'float'})
 df = df.astype({'OUTPUT':'float'})
 df
-```
+
 ### Assigning X and Y values :
-```
+
 X = df[['INPUT']].values
 Y = df[['OUTPUT']].values
-```
+
 ### Normalizing the data :
-```
+
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size = 0.33,random_state=33)
 Scaler = MinMaxScaler()
 Scaler.fit(X_train)
 X_train1 = Scaler.transform(X_train)
-```
+
 ### Creating and Training the model :
-```
+
 model = Sequential([
     Dense(5,activation = 'relu'),
     Dense(10,activation = 'relu'),
@@ -89,24 +89,24 @@ model = Sequential([
 ])
 model.compile(optimizer='rmsprop',loss = 'mse')
 model.fit(X_train1,y_train,epochs=2200)
-```
+
 ### Plot the loss :
-```
+
 loss_df = pd.DataFrame(model.history.history)
 loss_df.plot()
-```
+
 ### Evaluate the Model :
-```
+
 X_test1 = Scaler.transform(X_test)
 model.evaluate(X_test1,y_test)
 model.evaluate(X_test1,y_test)
-```
+
 ### Prediction for a value :
-```
+
 X_n1 = [[20]]
 X_n1_1 value = Scaler.transform(X_n1)
 model.predict(X_n1_1 value)
-```
+
 
 
 ## Dataset Information :
