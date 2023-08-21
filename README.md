@@ -41,9 +41,10 @@ Plot the performance plot
 Evaluate the model with the testing data.
 
 ## PROGRAM :
-## Developed By : P SYAM TEJ
-## Reference Number : 212221240056
-
+```
+Developed By: P SYAM TEJ
+Reference Number : 212221240056
+```
 ### Importing Required Packages :
 ```
 from google.colab import auth
@@ -98,36 +99,34 @@ loss_df.plot()
 ```
 X_test1 = Scaler.transform(X_test)
 model.evaluate(X_test1,y_test)
-model.evaluate(X_test1,y_test)
 ```
 ### Prediction for a value :
 ```
 X_n1 = [[20]]
 X_n1_1 value = Scaler.transform(X_n1)
 model.predict(X_n1_1 value)
-```
 
+```
 
 ## Dataset Information :
 
-![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/95480c13-bcb3-45bf-a130-418ad71cae82)
-![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/35eb7809-26fe-4107-a111-f61c7cbf66c0)
+![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/1d023f8c-2198-4abc-9c59-d978eed0f0dd)
 
 
 ## OUTPUT :
 
 ### Training Loss Vs Iteration Plot
 
-![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/a4e61011-0392-4865-bf8f-1aa8baf93cc6)
+![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/2b673fa3-8798-46a9-96e5-a909ee93b891)
 
 
 ### Test Data Root Mean Squared Error :
-![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/91940c5d-f88f-4e97-ac3f-2f993fd3c3b0)
+![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/43e38082-b4c1-4e4c-b48a-003e3e86a077)
 
 
 ### New Sample Data Prediction
 
-![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/7927fc6a-0ed5-451d-a210-09112af6795f)
+![image](https://github.com/vishnudorigundla/basic-nn-model/assets/94175324/be42d87e-ede4-4077-848e-03f61e176a12)
 
 
 ## RESULT :
